@@ -19,4 +19,9 @@ public class HelloController {
 
         }
 
+        @GetMapping("/{id}") // " {id} " ist Pfadparameter der in Anfrage kommt kam ub /user/123,dann ist es "123"
+        public String printValue(@PathVariable String id){ //PathVariable zum extrahieren d. Werte von id
+            return "Hi your ID is: " +id;
+        }
+
 }
