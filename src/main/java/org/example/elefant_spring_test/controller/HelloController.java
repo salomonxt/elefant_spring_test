@@ -25,7 +25,7 @@ public class HelloController {
 
         }
 
-        @GetMapping("api/search")
+        @GetMapping("/search")
         public String printquery(@RequestParam String query) { //RequestParam=Sagt, Zeug kommt von außen
             return "Deine Anfrage ist: " +query;
 
