@@ -29,7 +29,7 @@ public class MessageController {
     private final List<Message> messages = new ArrayList<>();
 
     @PostMapping("/api/messages")
-    public Message createMessage(@RequestBody Message message) {
+    public Message postMessage(@RequestBody Message message) {
         messages.add(message);
         return message;
     }
