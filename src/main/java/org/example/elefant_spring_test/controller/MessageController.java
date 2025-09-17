@@ -20,8 +20,8 @@ public class MessageController {
     public List<Message> getMessages() {
        return Arrays.asList
                (
-                new Message("1", "Johner Doooooooe", "meineID"),
-                new Message("2", "Jane Dooo", "meine ID2")
+                new Message("1", "Johner Doors", "DoorsID"),
+                new Message("2", "Janest Dorry", "JaneID")
                );
     }
 
