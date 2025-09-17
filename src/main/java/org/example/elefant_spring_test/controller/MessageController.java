@@ -1,28 +1,39 @@
 package org.example.elefant_spring_test.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 //aufgabe
 
 @RestController
+
+
 public class MessageController {
 
     @GetMapping("/api/messages")
     public List<Message> getMessages() {
-       return Arrays.asList(
+       return Arrays.asList
+               (
                 new Message("1", "Johner Doooooooe", "meineID"),
                 new Message("2", "Jane Dooo", "meine ID2")
-        );
+               );
+    }
+
+
+    private final List<Message> messages = new ArrayList<>();
+
+    @PostMapping("/api/messages")
+    public Message createMessage(@RequestBody Message message) {
+        messages.add(message);
+        return message;
     }
 }
-
-
-
 
 
 
