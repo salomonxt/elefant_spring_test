@@ -8,10 +8,21 @@ public class HelloController {
 
     //wenn ich was vom server holen möchte : @GetMapping - ABER nur 1x, ist einzigartig
     @GetMapping //für GET Request
-        public String sayHallo() {
-            return "Hallo Welt!";
-        }
+    public String sayHello() {
+        return "Hallo Welt!";
+    }
 
+    @PostMapping
+    public String printValue (@RequestBody Student value) {
+        return "Hallo, " +value.firstName()+ " " +value.lastName() +"!";
+
+
+    }
+}
+
+
+
+/*
         //postmapping für POST-Request
         @PostMapping
             public String printValue(@RequestBody Student value) { //@R..Body= Student ist im body der anfrage
@@ -32,4 +43,10 @@ public class HelloController {
 
         }
 //17.9.09:29:alles klappt
+
+
+
 }
+
+
+*/
